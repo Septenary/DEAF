@@ -11,3 +11,6 @@ for address, componentType in component.list("inventory_controller") do
   counter = counter + 1;
 end
 
+-- Read injectors for items
+local injectors getStackInSlot(4,1)
+
