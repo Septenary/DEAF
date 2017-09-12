@@ -12,5 +12,12 @@ for address, componentType in component.list("inventory_controller") do
 end
 
 -- Read injectors for items
-local injectors getStackInSlot(4,1)
+for count=1, 9 do
+    injectorinfo = injectors[counter].getStackInSlot(4,1)
+    if injectorinfo ~= nil then
+      print("Injector ".. counter .. ": "..injectorinfo["size"].."x "..injectorinfo["label"])
+      else
+      print("Injector "..counter.." is empty")
+    end
+end
 
