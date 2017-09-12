@@ -7,7 +7,7 @@ local counter = 1
 local injectors = {}
 for address, componentType in component.list("inventory_controller") do
   print(tostring(address) .. "," .. componentType)
-  injector[counter] = component.proxy(address)
+  injectors[counter] = component.proxy(address)
   counter = counter + 1;
 end
 
