@@ -28,36 +28,26 @@ local interface = component.proxy(component.get(interfaceAddress))
 local core = component.proxy(component.get(coreAddress))
 --print(interface.address)
  
- 
--- READ CORE
-local coreinfo = core.getStackInSlot(1,1)
-if coreinfo ~= nil then
-  print("Core ".. coreinfo["size"].. "x "..coreinfo["label"])
-else
-  print("Core is empty")
+-- READINFO
+readinfo = function(type, var, push)
+var.getStackInSlot(4,push)
+  if var ~= nil then
+     print(type .. var["size"].."x "..var["label"])
+  else
+     print(type .. " is empty")
+  end
 end
- 
+
+-- READ CORE
+readinfo(Core, core, 1)
+
 -- READ INTERFACE
 for counter=1,27 do
-  local interfaceinfo = interface.getStackInSlot(4,counter)
-  if interfaceinfo ~=nil then
-    print("Interface slot ".. counter.. " "..interfaceinfo["size"].."x "..interfaceinfo["label"])
-  else
-    print("Interface slot ".. counter.. " is empty")
-  end
+readinfo(Interface, interface, counter)
 end
- 
  
 -- READ INJECTORS
-for counter=1, 9 do
-  local injectorinfo = injector[counter].getStackInSlot(4,1)
-  if injectorinfo ~= nil then
-    print("Injector ".. counter .. ": "..injectorinfo["size"].."x "..injectorinfo["label"])
-  else
-    print("Injector ".. counter .." is empty")
-  end
-end
- 
+readinfo(Injector, injector, 1)
  
  
  
@@ -66,9 +56,8 @@ gpu.setDepth(4)
 gpu.setForeground(colors.blue, true)
 gpu.setBackground(colors.black, true)
  
-gpu.setBackground(colors.red, true)
-gpu.fill(w/2, 1, w, h/16, " ")
- 
+gpu.setBackground(colors.green, true)
+gpu.fill(w/2, 1, w, h/32, " ")
  
  
  
