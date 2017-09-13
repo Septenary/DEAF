@@ -5,8 +5,9 @@ local component = require("component")
 
 local counter = 1
 local injectors = {}
-for address, componentType in component.list("inventory_controller") do
-  print(tostring(address) .. "," .. componentType)
+for counter, componentType in component.list("inventory_controller") do
+  print("Address for Injector" .. counter.. "?")
+  local address = term.read()
   injectors[counter] = component.proxy(address)
   counter = counter + 1;
 end
@@ -20,4 +21,3 @@ for count=1, 9 do
       print("Injector "..counter.." is empty")
     end
 end
-
