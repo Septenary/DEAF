@@ -68,8 +68,13 @@ return read
 end
 
 -- HOOK DATABASE
-local db = component.proxy(component.get(coreAddress))
+local db = component.proxy(component.get(dbAddress))
 --print(db.address)
+
+-- HOOK REDSTONE
+local rs = component.proxy(component.get(rsAddress))
+--print(db.address)
+
 
 readInterface()
 readInjectors()
