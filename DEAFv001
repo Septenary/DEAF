@@ -40,7 +40,7 @@ for i=1,9 do
 injector[i] = component.proxy(component.get(injectorAddress[i]))
 --print(injector[i].address)
 end
-readInjector = function()
+readInjectors = function()
 for i=1,9 do
   local read = injector.getStackInSlot(4,1)
   local readt = {}
