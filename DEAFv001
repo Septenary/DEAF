@@ -25,7 +25,7 @@ for i=1,27 do
   local read = interface.getStackInSlot(4,i)
   local readt = {}
     if read ~= nil then
-     print("Interface Slot " .. i .. ": " .. interface["size"].."x "..interface["label"])
+     print("Interface Slot " .. i .. ": " .. read["size"].."x "..read["label"])
     else
       print("Interface Slot " .. i .. " is empty.")
     end
@@ -45,7 +45,7 @@ for i=1,9 do
   local read = injector[i].getStackInSlot(4,1)
   local readt = {}
     if read ~= nil then
-     print("Injector ".. i .. ": " .. injector["size"].."x "..injector["label"])
+     print("Injector ".. i .. ": " .. read["size"].."x "..read["label"])
     else
       print("Injector ".. i .. ": is empty.")
     end
@@ -60,7 +60,7 @@ local core = component.proxy(component.get(coreAddress))
 readCore = function()
 local read = core.getStackInSlot(4,1)
   if read ~= nil then
-   print("Core: "  .. core["size"].."x "..core["label"])
+   print("Core: "  .. read["size"].."x "..read["label"])
   else
     print("Core: is empty.")
   end
