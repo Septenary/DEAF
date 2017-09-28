@@ -71,6 +71,9 @@ end
 local db = component.proxy(component.get(coreAddress))
 --print(db.address)
 
+readInterface()
+readInjectors()
+readCore()
 
 
 
