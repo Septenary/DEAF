@@ -42,7 +42,7 @@ injector[i] = component.proxy(component.get(injectorAddress[i]))
 end
 readInjectors = function()
 for i=1,9 do
-  local read = injector.getStackInSlot(4,1)
+  local read = injector[i].getStackInSlot(4,1)
   local readt = {}
     if read ~= nil then
      print("Injector".. i .. ": " .. injector["size"].."x "..injector["label"])
