@@ -8,10 +8,9 @@ local colors = require("colors")
 local w, h = gpu.getResolution()
  
 -- CONFIG
-local injectorAddress = {"90a5", "e9ad", "85f0", "37a7", "88ef", "ea9d", "bebc", "104c", "ddf1"}
-local interfaceAddress = "2e4c"
---local monitorAddress = "2fd9"
-local coreAddress = "11cf"
+local injectorAddress = {"aec3", "660f", "2f50", "7eb4", "2917", "4fdc", "64dc", "6304", "ff2e"}
+local interfaceAddress = "aa19"
+local coreAddress = "47eb"
 local dbAddress = "c8f2"
 local rsAddress = "b80c"
  
