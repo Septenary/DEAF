@@ -47,7 +47,7 @@ for i=1,9 do
     if read ~= nil then
      print("Injector ".. i .. ": " .. read["size"].."x "..read["label"])
     else
-      print("Injector ".. i .. ": is empty.")
+      print("Injector ".. i .. "is empty.")
     end
   table.insert(readt,i)
 end
