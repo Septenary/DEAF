@@ -27,7 +27,7 @@ for i=1,27 do
     if read ~= nil then
      print("Interface Slot " .. i .. ": " .. interface["size"].."x "..interface["label"])
     else
-      print("Interface Slot" .. i .. " is empty.")
+      print("Interface Slot " .. i .. " is empty.")
     end
 end
 return readt
@@ -45,9 +45,9 @@ for i=1,9 do
   local read = injector[i].getStackInSlot(4,1)
   local readt = {}
     if read ~= nil then
-     print("Injector".. i .. ": " .. injector["size"].."x "..injector["label"])
+     print("Injector ".. i .. ": " .. injector["size"].."x "..injector["label"])
     else
-      print("Injector".. i .. ": is empty.")
+      print("Injector ".. i .. ": is empty.")
     end
   table.insert(readt,i)
 end
@@ -62,7 +62,7 @@ local read = core.getStackInSlot(4,1)
   if read ~= nil then
    print("Core: "  .. core["size"].."x "..core["label"])
   else
-    print("Core: " .. " is empty.")
+    print("Core: is empty.")
   end
 return read
 end
