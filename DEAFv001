@@ -62,7 +62,7 @@ local read = core.getStackInSlot(2,1)
   if read ~= nil then
    print("Core: "  .. read["size"].."x "..read["label"])
   else
-    print("Core: is empty.")
+   print("Core: is empty.")
   end
 return read
 end
@@ -75,10 +75,17 @@ local db = component.proxy(component.get(dbAddress))
 local rs = component.proxy(component.get(rsAddress))
 --print(db.address)
 
+-- OPERATION: AWAKENED CORE
+local oAC = function()
+ local j = readInterface()
+ for i=1,27 do
+  if j["label"] == "Awakened Draconium Ingot""
+   interface.store(4,i,db, 1)
+   print db.get(1)
+  
 
-readInterface()
-readInjectors()
-readCore()
+
+
 
 
 
