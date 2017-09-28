@@ -1,1 +1,98 @@
+-- Created by Sevenfm on Baconetworks, for herself and anyone who can't figure out how the hell to automate infusion crafting nicely
+ 
+-- DEPEDNANCIES
+local component = require("component")
+local term = require("term")
+local gpu = component.gpu
+local colors = require("colors")
+local w, h = gpu.getResolution()
+ 
+-- CONFIG
+local injectorAddress = {"90a5", "e9ad", "85f0", "37a7", "88ef", "ea9d", "bebc", "104c", "ddf1"}
+local interfaceAddress = "2e4c"
+--local monitorAddress = "2fd9"
+local coreAddress = "11cf"
+local dbAddress = "c8f2"
+local rsAddress = "b80c"
+ 
+ 
+ 
+-- HOOK INTERFACE
+local interface = component.proxy(component.get(interfaceAddress))
+--print (interface.address)
+readInterface = function()
+for i=1,27 do
+  local read = interface.getStackInSlot(4,i)
+  local readt = {}
+    if read ~= nil then
+     print(type .. interface["size"].."x "..interface["label"])
+    else
+      print(type .. " is empty.")
+    end
+end
+return readt
+end
 
+ 
+-- HOOK INJECTORS
+local injector = {}
+for i=1,9 do
+injector[i] = component.proxy(component.get(injectorAddress[i]))
+--print(injector[i].address)
+end
+readInjector = function()
+for i=1,9 do
+  local read = injector.getStackInSlot(4,1)
+  local readt = {}
+    if read ~= nil then
+     print(type .. injector["size"].."x "..injector["label"])
+    else
+      print(type .. " is empty.")
+    end
+  table.insert(readt,i)
+end
+return readt
+end
+
+-- HOOK CORE
+local core = component.proxy(component.get(coreAddress))
+--print(core.address)
+readCore = function()
+local read = core.getStackInSlot(4,1)
+  if read ~= nil then
+   print(type .. core["size"].."x "..core["label"])
+  else
+    print(type .. " is empty.")
+  end
+return read
+end
+
+-- HOOK DATABASE
+local db = component.proxy(component.get(coreAddress))
+--print(db.address)
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+-- Initialize GUI
+gpu.setDepth(4)
+gpu.setForeground(colors.blue, true)
+gpu.setBackground(colors.black, true)
+ 
+gpu.setBackground(colors.green, true)
+gpu.fill(w/2, 1, w, h/32, " ")
+ 
+ 
+ 
+ 
+--Close GPU
+gpu.setForeground(colors.blue, true)
+gpu.setBackground(colors.black, true)
