@@ -58,7 +58,7 @@ end
 local core = component.proxy(component.get(coreAddress))
 --print(core.address)
 readCore = function()
-local read = core.getStackInSlot(4,1)
+local read = core.getStackInSlot(2,1)
   if read ~= nil then
    print("Core: "  .. read["size"].."x "..read["label"])
   else
